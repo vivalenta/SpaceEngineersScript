@@ -4,11 +4,16 @@ public void Save() {}
 string GoTrustGroup = "Thrust"; //name thrusters
 double SaveDistans  = 7; // stop distantion
 double tagertGravity = 9.81;
-bool infoToLcd = true;
-bool infoEcho = false;
+bool infoToLcd = false;
+bool infoEcho = true;
 bool allTanksWorking = true;
 // double oxygenCapacity = 100000;
 // масса програмного блока
+
+public Program()
+{
+	Runtime.UpdateFrequency = UpdateFrequency.Update1;
+}
 
 public void Main(string argument) {
 	
@@ -163,6 +168,7 @@ public double getMaxForce (){
 	} else {throw new Exception("Немає грапи двигунів з ім'ям: " + GoTrustGroup);}
 	return force;
 }
+
 
 public double hydrogenLess(){
 	var gasTanks = new List<IMyGasTank>();

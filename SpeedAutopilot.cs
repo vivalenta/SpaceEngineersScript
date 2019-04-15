@@ -93,7 +93,7 @@ public void Main(string argument)
 	if (distance > stopDistance) // Ми ще не прибули ???
     {
         SetDirectionTo(gyroPitch, gyroYaw, ref tagertLock);
-        if ((distance > currentStopPath & tagertLock )||(needFlip & !doneFlip)) // Тормозимо ?
+        if (distance > currentStopPath & tagertLock ) // Тормозимо ?
         {
 			if (currentShipSpeed > MaxSpeed*1.1) // Більша швидкість
             {
